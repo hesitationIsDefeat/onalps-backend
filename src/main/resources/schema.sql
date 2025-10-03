@@ -1,7 +1,7 @@
 --DROP TABLE IF EXISTS marketplace CASCADE;
 --DROP TABLE IF EXISTS brand CASCADE;
 --DROP TABLE IF EXISTS ai_infu CASCADE;
---DROP TABLE IF EXISTS post CASCADE;
+DROP TABLE IF EXISTS post CASCADE;
 
 CREATE TABLE IF NOT EXISTS marketplace (
     id UUID PRIMARY KEY, -- @GeneratedValue(strategy = GenerationType.UUID)
@@ -65,9 +65,9 @@ CREATE TABLE IF NOT EXISTS post (
     marketplace_id UUID NOT NULL,
     brand_id UUID NOT NULL,
     ai_infu_id UUID NOT NULL,
-    image_url VARCHAR(255) NOT NULL,
-    product_url VARCHAR(255) NOT NULL,
-    prompt VARCHAR(255) NOT NULL,
+    image_url VARCHAR(2048) NOT NULL,
+    product_url VARCHAR(2048) NOT NULL,
+    prompt VARCHAR(2048) NOT NULL,
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     modified_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

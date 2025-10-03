@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(EntityAlreadyExistsException.class)
     public ResponseEntity<ErrorResponseDto> handleEntityAlreadyExistsException(EntityAlreadyExistsException e) {
-        return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(createErrorBody(HttpStatus.ALREADY_REPORTED));
+        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(createErrorBody(HttpStatus.NOT_ACCEPTABLE));
     }
 
     @ExceptionHandler(InvalidUUIDStringException.class)
