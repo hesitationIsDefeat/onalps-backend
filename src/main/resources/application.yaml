@@ -1,0 +1,27 @@
+server:
+  port: 8086
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: true
+    include-stacktrace: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/onalps
+    username: onat
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      properties:
+        format_sql: true
+    show-sql: true
+
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
